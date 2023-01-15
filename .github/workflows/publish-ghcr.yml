@@ -9,7 +9,7 @@ env:
   CONTAINER_NAME: "steamcmd"
 
 jobs:
-  publish-hello-docker-image:
+  publish-steamcmd-image:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,8 +19,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: downcase REPO
+        run: |
+          echo "REPO=${GHCR_ORG,,}" >>${GITHUB_ENV}
       - name: Build and publish image
         run: |
-          docker build . --tag ghcr.io/${{ env.GHCR_ORG }}/${{ env.CONTAINER_NAME }}:${{ github.event.release.tag_name }}
-          docker run ghcr.io/${{ env.GHCR_ORG }}/${{ env.CONTAINER_NAME }}:${{ github.event.release.tag_name }}
-          docker push ghcr.io/${{ env.GHCR_ORG }}/${{ env.CONTAINER_NAME }}:${{ github.event.release.tag_name }}
+          docker build . --tag ghcr.io/${{ env.REPO }}/${{ env.CONTAINER_NAME }}:${{ github.event.release.tag_name }}
+          docker run ghcr.io/${{ env.REPO }}/${{ env.CONTAINER_NAME }}:${{ github.event.release.tag_name }}
+          docker push ghcr.io/${{ env.REPO }}/${{ env.CONTAINER_NAME }}:${{ github.event.release.tag_name }}
