@@ -22,6 +22,7 @@ jobs:
       - name: downcase REPO
         run: |
           echo "REPO=${GHCR_ORG,,}" >>${GITHUB_ENV}
+          ls -lah
       - name: Build and publish image
         run: |
           docker build . --tag ghcr.io/${{ env.REPO }}/${{ env.CONTAINER_NAME }}:${{ github.event.release.tag_name }}
