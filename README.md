@@ -1,3 +1,9 @@
+## :children_crossing: Disclaimer :framed_picture: :potable_water:
+
+**This repository is used as part of The Water Museum's internal build processes for games. It is not necessarily intended for public use or consumption, as the underlying code may contain changes that are specific to our needs and environments.** While you're welcome to adapt our public projects to your own use cases, we are unable to offer additional support or guidance.
+
+At times, specific improvements and features from our internal forks may be backported to their sources. Thus, we strongly recommend using the original upstream repository for your projects.
+
 [![](https://img.shields.io/codacy/grade/6a8e207cf98246169e633d6f22da9d9c)](https://hub.docker.com/r/cm2network/steamcmd/) [![Docker Build Status](https://img.shields.io/docker/cloud/build/cm2network/steamcmd.svg)](https://hub.docker.com/r/cm2network/steamcmd/) [![Docker Stars](https://img.shields.io/docker/stars/cm2network/steamcmd.svg)](https://hub.docker.com/r/cm2network/steamcmd/) [![Docker Pulls](https://img.shields.io/docker/pulls/cm2network/steamcmd.svg)](https://hub.docker.com/r/cm2network/steamcmd/) [![](https://img.shields.io/docker/image-size/cm2network/steamcmd)](https://img.shields.io/docker/image-size/cm2network/steamcmd) [![Discord](https://img.shields.io/discord/747067734029893653)](https://discord.gg/7ntmAwM)
 # Supported tags and respective `Dockerfile` links
   -	[`steam`, `latest`  (*bullseye/Dockerfile*)](https://github.com/CM2Walki/steamcmd/blob/master/bullseye/Dockerfile)
